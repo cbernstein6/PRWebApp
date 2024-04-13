@@ -8,7 +8,25 @@
             <ul>
                 <li>About Us</li>
                 <li>Sign In</li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </nav>
+
+        
+        <form id="sign-in-form">
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" formControlName="username" class="form-control">
+                </div>
+            
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" formControlName="password" class="form-control">
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </form>
+        </form>
     </div>
 </header>
