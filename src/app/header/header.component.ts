@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+
+  @Output() loginReq = new EventEmitter<boolean>();
+  login: boolean = false;
+  showLogin(){
+    this.login = true;
+    this.loginReq.emit(this.login);
+  }
   onSubmit(){}
 }

@@ -1,27 +1,45 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { TopSchoolsComponent } from './top-schools/top-schools.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { DataInterface } from '../../interfaces/DataInterface';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { CommonModule } from '@angular/common';
+import { HttpRequest } from './http.service'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HeaderComponent, SearchComponent, TopSchoolsComponent, HttpClientModule],
+  imports: [HeaderComponent, SearchComponent, TopSchoolsComponent, HttpClientModule, LoginComponent, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers: [HttpRequest]
 })
+
+
 export class AppComponent {
   title = 'RatePlate-web-app';
   userId: number = -1;
+  login: boolean = false;
+  users: any;
+  
 
-  constructor(private http: HttpClient) {
-    this.http.get<DataInterface>('http://localhost:5119/api/rp/GetFirst').subscribe(data => {
-      this.userId = data.userId;
-    })
+  constructor(private http: HttpRequest) {}
+
+  setLogin(val: boolean){
+    
+    this.login = true;
   }
+
+  ngOnInit(){
+    this.http.getUsers().subscribe(users => {
+      this.users = users;
+    })
+    
+    
+  }
+
+
 
   
 }
