@@ -16,3 +16,7 @@ header {
 .others nav ul li{
     margin-left: 20px;
 }
+
+.user-forms {
+    display: flex;
+}

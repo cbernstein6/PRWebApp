@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpRequest } from '../http.service';
 import { CommonModule } from '@angular/common';
+import { SchoolIconComponent } from "./school-icon/school-icon.component";
 
 @Component({
-  selector: 'app-top-schools',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './top-schools.component.html',
-  styleUrl: './top-schools.component.css'
+    selector: 'app-top-schools',
+    standalone: true,
+    templateUrl: './top-schools.component.html',
+    styleUrl: './top-schools.component.css',
+    imports: [CommonModule, SchoolIconComponent]
 })
 export class TopSchoolsComponent {
+  @Output() school = new EventEmitter();
   schools: any;
   college: any;
 
@@ -25,8 +27,8 @@ export class TopSchoolsComponent {
     });
   }
 
-  buttonClick(){
-    console.log(this.college);
+  onClick(school: any){
+    this.school.emit(school);
   }
 
   
