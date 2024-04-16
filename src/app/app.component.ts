@@ -9,7 +9,12 @@ import { HttpRequest } from './http.service'
 import { DisplaySchoolComponent } from "./main/display-school/display-school.component";
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from "./main/main.component";
+import { Routes, RouterModule } from '@angular/router';
 
+
+const routes: Routes = [
+  {path="/", component="AppComponent"}
+];
 
 @Component({
     selector: 'app-root',
@@ -27,7 +32,7 @@ export class AppComponent {
   
   users: any;
 
-
+  
 
   constructor(private http: HttpRequest) {}
 
@@ -38,8 +43,4 @@ export class AppComponent {
       this.users = users;
     })
   }
-
-
-
-  
 }
