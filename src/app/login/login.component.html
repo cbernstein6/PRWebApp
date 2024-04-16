@@ -1,4 +1,48 @@
-<div>
-LOGIN COMPONENT
+<div class="main">
 
+    <app-header></app-header>
+
+
+    <div class="user-forms">
+        <form id="sign-in-form">
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" formControlName="username" class="form-control">
+                </div>
+            
+                <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" formControlName="password" class="form-control">
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+        </form>
+        
+
+
+        <form id="sign-up-form">
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" formControlName="username" class="form-control" #signUpUsername>
+                </div>
+            
+                <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" formControlName="password" class="form-control"
+                #signUpPassword>
+                </div>
+            
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </form>
+
+        <div class="user-list">
+            <p *ngFor="let user of users">{{user?.username}}</p>
+        </div>
+        
+    </div>
 </div>
+

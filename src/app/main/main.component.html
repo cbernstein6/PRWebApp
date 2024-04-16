@@ -1,0 +1,9 @@
+<div>
+    <app-header></app-header>
+    <app-search></app-search>
+    <app-top-schools
+    (school)="storeSchool($event)"></app-top-schools>
+
+    <app-display-school
+    [schoolDisplay]="school"></app-display-school>
+</div>

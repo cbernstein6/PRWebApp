@@ -1,0 +1,16 @@
+.search-school {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 75px;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Tesla uses the Roboto font */
+    color: #00ccff; /* This is the red color Tesla often uses in their branding */
+    font-size: 4em; /* Adjust size as needed */
+    font-weight: bold; /* Tesla's titles are often bold */
+    text-transform: uppercase; /* Tesla often uses uppercase letters in their titles */
+}

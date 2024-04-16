@@ -1,15 +1,4 @@
-<div *ngIf="login; else block2">
-    <app-header (loginReq)="setLogin(false)"></app-header>
+<div>
+    <app-main></app-main>
     <app-login></app-login>
 </div>
-
-<ng-template #block2>
-    <div>
-        <app-header (loginReq)="setLogin(true)"></app-header>
-        <app-search></app-search>
-        <app-top-schools></app-top-schools>
-    </div>
-</ng-template>
-
-<p>{{ users.username }}</p>
-

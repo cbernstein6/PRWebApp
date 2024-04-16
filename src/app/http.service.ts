@@ -16,4 +16,17 @@ export class HttpRequest {
     GetCollege(){
         return this.http.get('http://localhost:5119/api/rp/GetCollegeById/1');
     }
+
+    GetUserList(){
+        return this.http.get('http://localhost:5119/api/rp/GetList');
+    }
+
+    AddUser(username: string, password: string, redopassword: string){
+        let body = {
+            username: username,
+            password: password,
+            redopassword: redopassword
+        };
+        return this.http.post('http://localhost:5119/api/rp/AddUser', body);
+    }
 }

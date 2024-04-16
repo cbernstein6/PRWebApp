@@ -2,14 +2,17 @@
     <div class="top-schools-display">
         <p class="title">View our top schools</p>
         
-        <div class="schools-display" 
-        *ngFor="let school of schools">
-            <h2>{{school.name}}</h2>
-            <p>{{school.location}}</p>
-            <!-- <img src="{{school.imagePath}}"> -->
+        <div class="schools-display"
+        >
+            <app-school-icon
+            *ngFor="let schoolEl of schools"
+            [school]="schoolEl"
+            (click)="onClick(schoolEl)">
+
+            </app-school-icon>
+            
         </div>
 
-        <button (click)="buttonClick()">Click</button>
 
     </div>
 </div>
