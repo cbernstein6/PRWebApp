@@ -6,13 +6,17 @@
     <div class="others">
         <nav>
             <ul>
-                <li>About Us</li>
-                <li>Sign In</li>
-                <li><button (click)="showLogin()">Login</button></li>
+                <li><a routerLink="/about-us" routerLinkActive="active">About Us</a></li>
+                <li><a routerLink="/sign-in" routerLinkActive="active">Sign In</a></li>
+                <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
             </ul>
         </nav>
 
         
 
+    </div>
+
+    <div class="user-list">
+        <p *ngFor="let user of users">{{user?.username}}</p>
     </div>
 </header>

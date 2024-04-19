@@ -10,6 +10,8 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+
+
 export class HeaderComponent {
 
   @Output() loginReq = new EventEmitter<boolean>();
@@ -26,6 +28,7 @@ export class HeaderComponent {
     })
 
     console.log(this.users);
+    
   }
 
 

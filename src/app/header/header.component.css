@@ -20,3 +20,40 @@ header {
 .user-forms {
     display: flex;
 }
+
+
+
+
+nav ul {
+    list-style-type: none; /* Remove default list bullets */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; /* Dark background color */
+    text-align: center; /* Center-align the list items */
+  }
+  
+  nav li {
+    display: inline; /* Display list items in a line */
+    margin-right: 20px; /* Spacing between items */
+  }
+  
+  nav li a {
+    display: inline-block;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 14px 16px; /* Padding for clickable area */
+    text-decoration: none; /* Remove default text underline */
+  }
+  
+  /* Change the link color on hover */
+  nav li a:hover {
+    background-color: #111;
+  }
+  
+  /* Active link styling */
+  .active {
+    background-color: #04AA6D; /* Different background for the active link */
+    color: white;
+  }
+  
