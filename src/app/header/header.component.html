@@ -1,18 +1,22 @@
 <header>
     <div class="logo">
-        <img src="./assets/logo.png" alt="Logo">
+        <a routerLink="/" routerLinkActive="active"><img src="./assets/logo.png" alt="Logo"></a>
     </div>
 
     <div class="others">
         <nav>
             <ul>
-                <li>About Us</li>
-                <li>Sign In</li>
-                <li><button (click)="showLogin()">Login</button></li>
+                <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li><a>About Us</a></li>
+                 <li><a routerLink="/login" routerLinkActive="active">Sign in</a></li> <!--only actual link -->
             </ul>
         </nav>
 
         
 
+    </div>
+
+    <div class="user-list">
+        <p *ngFor="let user of users">{{user?.username}}</p>
     </div>
 </header>

@@ -5,21 +5,19 @@ import { Injectable } from "@angular/core";
 export class HttpRequest {
     constructor(private http: HttpClient){}
 
-    getUsers() {
-        return this.http.get('http://localhost:5119/api/rp/GetFirst');
+    PopularSchools(){
+        return this.http.get('http://localhost:5119/api/College/GetPopular');
     }
 
-    PopularSchools(){
-        return this.http.get('http://localhost:5119/api/rp/GetMostPopular');
+    GetUserList() {
+        return this.http.get('http://localhost:5119/api/User');
     }
 
     GetCollege(){
-        return this.http.get('http://localhost:5119/api/rp/GetCollegeById/1');
+        return this.http.get('http://localhost:5119/api/College/GetCollege/1');
     }
 
-    GetUserList(){
-        return this.http.get('http://localhost:5119/api/rp/GetList');
-    }
+    
 
     AddUser(username: string, password: string, redopassword: string){
         let body = {
