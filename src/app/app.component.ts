@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './main/search/search.component';
-import { TopSchoolsComponent } from './top-schools/top-schools.component';
+import { SearchComponent } from './RouteComponents/main/search/search.component';
+import { TopSchoolsComponent } from './RouteComponents/main/top-schools/top-schools.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './RouteComponents/login/login.component';
 import { CommonModule } from '@angular/common';
 import { HttpRequest } from './http.service'
-import { DisplaySchoolComponent } from "./main/display-school/display-school.component";
+import { DisplaySchoolComponent } from "./RouteComponents/display-school/display-school.component";
 import { FormsModule } from '@angular/forms';
-import { MainComponent } from "./main/main.component";
+import { MainComponent } from "./RouteComponents/main/main.component";
 import { Routes, RouterModule, RouterOutlet } from '@angular/router';
 
 

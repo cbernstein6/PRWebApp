@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { HttpRequest } from '../http.service';
+import { HttpRequest } from '../../../http.service';
 import { CommonModule } from '@angular/common';
 import { SchoolIconComponent } from "./school-icon/school-icon.component";
 
