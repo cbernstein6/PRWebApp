@@ -10,7 +10,6 @@ import { DisplaySchoolComponent } from "./main/display-school/display-school.com
 import { FormsModule } from '@angular/forms';
 import { MainComponent } from "./main/main.component";
 import { Routes, RouterModule, RouterOutlet } from '@angular/router';
-import { routes } from './app.routes';
 
 
 
@@ -22,7 +21,7 @@ import { routes } from './app.routes';
     styleUrl: './app.component.css',
     providers: [HttpRequest],
     // imports: [HeaderComponent, SearchComponent, TopSchoolsComponent, HttpClientModule, LoginComponent, CommonModule, DisplaySchoolComponent, FormsModule, MainComponent, RouterOutlet]
-     imports: [HeaderComponent, RouterOutlet, HttpClientModule]
+     imports: [HeaderComponent, RouterOutlet, HttpClientModule, RouterModule]
 })
 
 
@@ -39,12 +38,13 @@ export class AppComponent {
   routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'main', component: MainComponent},
-    {path: 'login', component: LoginComponent}
+    {path: 'login', component: LoginComponent},
+    
   ];
 
   ngOnInit(){
-    this.http.getUsers().subscribe(users => {
-      this.users = users;
-    })
+    // this.http.getUsers().subscribe(users => {
+    //   this.users = users;
+    // })
   }
 }

@@ -2,11 +2,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpRequest } from '../http.service';
 import { CommonModule } from '@angular/common';
 import { FormGroup } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

@@ -53,7 +53,7 @@ nav ul {
   
   /* Active link styling */
   .active {
-    background-color: #04AA6D; /* Different background for the active link */
+    /* background-color: #04AA6D; Different background for the active link */
     color: white;
   }
   
