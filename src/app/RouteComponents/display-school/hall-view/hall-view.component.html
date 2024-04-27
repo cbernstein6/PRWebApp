@@ -1,4 +1,10 @@
-<div class="border">
+<div class="border" [routerLink]="['/hall']" [queryParams]="{
+    id: hall.hallId,
+    name: hall.name,
+    location: hall.location,
+    averageScore: hall.averageScore,
+    imagePath: hall.imagePath
+}">
     <div class="hall-display">
         <div class="img-display">
             <img src="assets/{{hall.imagePath}}">

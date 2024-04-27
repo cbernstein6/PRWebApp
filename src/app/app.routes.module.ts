@@ -3,13 +3,16 @@ import { MainComponent } from './RouteComponents/main/main.component';
 import { LoginComponent } from './RouteComponents/login/login.component';
 import { NgModule } from '@angular/core';
 import { DisplaySchoolComponent } from './RouteComponents/display-school/display-school.component';
+import { DisplayHallComponent } from './RouteComponents/display-hall/display-hall.component';
 
 
 export const routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'main', component: MainComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'school', component: DisplaySchoolComponent}
+    {path: 'school', component: DisplaySchoolComponent},
+    {path: 'hall', component: DisplayHallComponent}
+    
 ];
 
 @NgModule({
