@@ -1,0 +1,19 @@
+.img-display img{
+    width: 100vw;
+    height: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.info p {
+    /* flex-grow: 0; */
+    margin: 0;
+    margin-left: 1em;
+    font-family: 'Roboto', sans-serif; /* Tesla uses the Roboto font */
+    
+}

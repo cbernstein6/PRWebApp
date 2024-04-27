@@ -10,14 +10,8 @@
     </div>
 
     <div class="halls">
-        <div class="info-text">
-            <h1>Dining hall {{id}}</h1>
-            <h1>Address</h1>
-        </div>
-        <div class="info-text">
-            <h1>Dining hall 1</h1>
-            <h1>Address</h1>
-        </div>
+        <app-hall-view 
+        *ngFor="let hallEl of halls"
+        [hall] = "hallEl"></app-hall-view>
     </div>
-
 </div>
