@@ -19,7 +19,7 @@ export class TopSchoolsComponent {
   ngOnInit(){
     this.http.PopularSchools().subscribe(schools => {
       this.schools = Object.values(schools);
-      console.log(this.schools[0]);
+      // console.log(this.schools[0]);
     });
 
     this.http.GetCollege().subscribe(college => {
@@ -29,5 +29,7 @@ export class TopSchoolsComponent {
 
 
   
-
+  ngOnDestroy(){
+    // this.http.unsub
+  }
 }

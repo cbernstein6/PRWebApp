@@ -1,4 +1,9 @@
-<a [routerLink]="['/school',school.collegeId, school.name,school.location,school.imagePath]">
+<a [routerLink]="['/school']" [queryParams]="{
+    id: school.collegeId,
+    title: school.name, 
+    location: school.location, 
+    image: school.imagePath}">
+    
 <div class="summary">
         <div class="outside-class">
             <div class="elements">

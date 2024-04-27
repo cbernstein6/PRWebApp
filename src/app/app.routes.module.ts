@@ -9,7 +9,7 @@ export const routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'main', component: MainComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'school/:id/:title/:location/:imagePath', component: DisplaySchoolComponent}
+    {path: 'school', component: DisplaySchoolComponent}
 ];
 
 @NgModule({
