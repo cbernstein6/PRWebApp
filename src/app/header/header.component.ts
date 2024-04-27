@@ -28,7 +28,7 @@ export class HeaderComponent {
       this.users = users;
     })
 
-    console.log(this.users);
+    // console.log(this.users);
     
   }
 

@@ -14,13 +14,13 @@ import { DisplaySchoolComponent } from "../display-school/display-school.compone
 export class MainComponent {
     school: any;
     login: boolean = false;
+
+    
   
   
     setLogin(val: boolean){
         this.login = true;
     }
   
-    storeSchool(school: any){
-      this.school = school;
-    }
+
 }

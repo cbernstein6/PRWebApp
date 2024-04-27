@@ -17,7 +17,9 @@ export class HttpRequest {
         return this.http.get('http://localhost:5119/api/College/GetCollege/1');
     }
 
-    
+    GetSchoolHalls(){
+        return this.http.get('');
+    }
 
     AddUser(username: string, password: string, redopassword: string){
         let body = {

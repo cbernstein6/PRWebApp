@@ -11,7 +11,6 @@ import { SchoolIconComponent } from "./school-icon/school-icon.component";
     imports: [CommonModule, SchoolIconComponent]
 })
 export class TopSchoolsComponent {
-  @Output() school = new EventEmitter();
   schools: any;
   college: any;
 
@@ -20,16 +19,14 @@ export class TopSchoolsComponent {
   ngOnInit(){
     this.http.PopularSchools().subscribe(schools => {
       this.schools = Object.values(schools);
-    })
+      console.log(this.schools[0]);
+    });
 
     this.http.GetCollege().subscribe(college => {
       this.college = college;
     });
   }
 
-  onClick(school: any){
-    this.school.emit(school);
-  }
 
   
 

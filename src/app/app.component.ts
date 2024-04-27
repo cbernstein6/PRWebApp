@@ -20,8 +20,7 @@ import { Routes, RouterModule, RouterOutlet } from '@angular/router';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     providers: [HttpRequest],
-    // imports: [HeaderComponent, SearchComponent, TopSchoolsComponent, HttpClientModule, LoginComponent, CommonModule, DisplaySchoolComponent, FormsModule, MainComponent, RouterOutlet]
-     imports: [HeaderComponent, RouterOutlet, HttpClientModule, RouterModule]
+    imports: [HeaderComponent, RouterOutlet, HttpClientModule, RouterModule]
 })
 
 
@@ -32,19 +31,14 @@ export class AppComponent {
   users: any;
 
   
-
   constructor(private http: HttpRequest) {}
 
+  
   routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'main', component: MainComponent},
     {path: 'login', component: LoginComponent},
-    
   ];
 
-  ngOnInit(){
-    // this.http.getUsers().subscribe(users => {
-    //   this.users = users;
-    // })
-  }
+  ngOnInit(){}
 }
