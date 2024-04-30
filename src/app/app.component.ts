@@ -26,8 +26,6 @@ export class AppComponent {
   users: any;
 
   
-  constructor(private http: HttpRequest) {}
-
   
   routes: Routes = [
     {path: '', component: MainComponent},

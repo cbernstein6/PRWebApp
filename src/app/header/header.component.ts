@@ -24,9 +24,9 @@ export class HeaderComponent {
 
   ngOnInit(){
     
-    this.http.GetUserList().subscribe(users => {
-      this.users = users;
-    })
+    // this.http.GetUserList().subscribe(users => {
+    //   this.users = users;
+    // })
 
     // console.log(this.users);
     
