@@ -25,6 +25,7 @@ export class TopSchoolsComponent {
     this.http.GetCollege().subscribe(college => {
       this.college = college;
     });
+    // console.log(this.college);
   }
 
 

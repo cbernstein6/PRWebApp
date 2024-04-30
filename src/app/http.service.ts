@@ -9,8 +9,8 @@ export class HttpRequest {
         return this.http.get('http://localhost:5119/api/College/GetPopular');
     }
 
-    GetUserList() {
-        return this.http.get('http://localhost:5119/api/User');
+    GetHallRatings(id: number) {
+        return this.http.get(`http://localhost:5119/api/Rating/Hall/${id}`);
     }
 
     GetCollege(){
@@ -18,7 +18,11 @@ export class HttpRequest {
     }
 
     GetSchoolHalls(id: number){
-        return this.http.get(`http://localhost:5119/api/Hall/college/${id}`);
+        return this.http.get(`http://localhost:5119/api/Hall/CollegeHalls/${id}`);
+    }
+
+    GetRatingDetails(id: number){
+        return this.http.get(`http://localhost:5119/api/Rating/HallDetails/${id}`);
     }
 
     AddUser(username: string, password: string, redopassword: string){
