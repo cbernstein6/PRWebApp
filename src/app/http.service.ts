@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { UserLoginDto } from "../../models/UserLoginDto";
+import { FormGroup } from "@angular/forms";
 
 @Injectable()
 export class HttpRequest {
@@ -25,6 +26,7 @@ export class HttpRequest {
     GetRatingDetails(id: number){
         return this.http.get(`http://localhost:5119/api/Rating/HallDetails/${id}`);
     }
+    
 
     AddUser(username: string, password: string, redopassword: string){
         let body = {
@@ -38,6 +40,9 @@ export class HttpRequest {
     Login(loginInfo: UserLoginDto){
         // console.log("at sending");
         return this.http.post('http://localhost:5119/api/User/login', loginInfo);
-        
+    }
+    
+    SendRating(form: FormGroup){
+        return this.http.post('http://localhost:5119/api/Rating/HallDetails', form);
     }
 }
