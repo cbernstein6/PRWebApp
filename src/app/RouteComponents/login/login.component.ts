@@ -39,7 +39,10 @@ export class LoginComponent {
         };
 
         this.http.Login(loginData).subscribe(
-            (response) => console.log("Login successful", response),
+            (response) => {
+                let token: string = Object.values(response)[0];
+                localStorage.setItem('jwtToken',token);
+            },
             (error) => this.toastr.error("User Not Found")
         );
         
