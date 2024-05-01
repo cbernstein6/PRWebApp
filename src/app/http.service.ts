@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { UserLoginDto } from "../../models/UserLoginDto";
 
 @Injectable()
 export class HttpRequest {
@@ -32,5 +33,11 @@ export class HttpRequest {
             redopassword: redopassword
         };
         return this.http.post('http://localhost:5119/api/rp/AddUser', body);
+    }
+
+    Login(loginInfo: UserLoginDto){
+        // console.log("at sending");
+        return this.http.post('http://localhost:5119/api/User/login', loginInfo);
+        
     }
 }
