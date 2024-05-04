@@ -20,12 +20,12 @@
     </div>
 
     <div class="rating-button">
-        <button>Add Rating</button>
+        <button (click)="navigateOrError()">Add Rating</button>
     </div>
 
     <div class="ratings">
         <h1 style="margin-left: 1em;">Reviews</h1>
-        <div *ngFor="let rating of ratings" class="rating">
+        <div *ngFor="let rating of ratings | slice:0:totalRatings" class="rating">
             <div class="rating-detail">
                 <p>Name: PlaceHolder-{{rating.userId}}</p>
                 <p>Grade: {{rating.score}}</p>
@@ -34,5 +34,8 @@
                 <p>{{rating.message}}</p>
             </div>
         </div>
+
+        <button (click)="incRatings()">View More</button>
+
     </div>
 </div>

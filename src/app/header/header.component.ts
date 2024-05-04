@@ -1,8 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { HttpRequest } from '../http.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HttpRequest } from '../services/http.service';
 import { CommonModule } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,14 +15,17 @@ import { RouterModule } from '@angular/router';
 })
 
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
   @Output() loginReq = new EventEmitter<boolean>();
   login: boolean = false;
   users: any;
+
+
+  
   // signUpForm: FormGroup;
   
-  constructor(private http: HttpRequest) {}
+  constructor(private http: HttpRequest, private auth: AuthService) {}
 
   ngOnInit(){
     
@@ -32,10 +37,20 @@ export class HeaderComponent {
     
   }
 
+  checkAuth(){
+    return this.auth.checkObservable();
+  }
+
+  signOut(){
+    this.auth.signOut();
+  }
+
 
   showLogin(){
     this.login = true;
     this.loginReq.emit(this.login);
   }
+
+  
   
 }

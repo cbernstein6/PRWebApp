@@ -23,7 +23,7 @@ form {
   
   /* Style for all select elements and textarea */
   select, textarea {
-    width: 100%;
+    width: 60%;
     padding: 8px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -37,7 +37,7 @@ form {
   
   /* Style for the submit button */
   button {
-    width: 100%;
+    width: 8em;
     padding: 10px;
     background-color: #0056b3;
     color: white;
@@ -57,3 +57,5 @@ form {
     margin: 0;
     padding: 0;
   }
+
+  
