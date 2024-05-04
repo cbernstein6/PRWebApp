@@ -82,10 +82,9 @@
 .summary {
     margin: 2em;
     margin-top: 3em;
-    margin-bottom: 3em;
 }
 
-.rating-button button {
+button {
     margin: 2em;
     width: 8em;
     padding: 10px;

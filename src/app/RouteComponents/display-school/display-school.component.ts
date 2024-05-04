@@ -1,4 +1,4 @@
-import { HttpRequest } from '../../http.service';
+import { HttpRequest } from '../../services/http.service';
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -24,9 +24,7 @@ export class DisplaySchoolComponent {
   private querySubscription!: Subscription;
 
 
-  constructor(private http: HttpRequest, private route: ActivatedRoute){
-    
-  }
+  constructor(private http: HttpRequest, private route: ActivatedRoute){}
 
   ngOnInit() {
     this.querySubscription = this.route.queryParams.subscribe(params => {

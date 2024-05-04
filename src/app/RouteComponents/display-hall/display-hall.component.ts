@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { HttpRequest } from '../../http.service';
+import { HttpRequest } from '../../services/http.service';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-display-hall',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './display-hall.component.html',
   styleUrl: './display-hall.component.css'
 })
@@ -18,13 +19,17 @@ export class DisplayHallComponent {
   location: any | null;
   imagePath: any | null;
   id: any | null;
-  averageScore: any | null;
+  averageScore: any | null = 0;
 
-  ratings: any;
+  ratings: any[] = [];
 
   detailList: any;
+
+  totalRatings: number = 20;
+
   
-  constructor(private route: ActivatedRoute, private http: HttpRequest){}
+  
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpRequest, private toastr: ToastrService){}
 
   ngOnInit() {
     this.querySubscription = this.route.queryParams.subscribe(params => {
@@ -32,7 +37,6 @@ export class DisplayHallComponent {
       this.title = params['name'];
       this.imagePath = params['imagePath'];
       this.location = params['location'];
-      this.averageScore = params['averageScore'];
     });
 
 
@@ -42,11 +46,38 @@ export class DisplayHallComponent {
     
     this.http.GetRatingDetails(this.id).subscribe((res) => {
       this.detailList = res;
-      // console.log(this.detailList[0]);
     });
+
+    // for(let detail of this.detailList)
+    //   this.averageScore += detail
+    // this.averageScore /= 7;
+
   }
   
   ngOnDestroy(){
     this.querySubscription.unsubscribe();
+  }
+
+  signedIn(){
+    return localStorage.getItem("jwtToken") != null;
+  }
+
+  toastrErr(){
+    if(!this.signedIn())
+      this.toastr.error('Please sign in to add a rating','Error');
+  }
+
+  incRatings(){
+    this.totalRatings += 20;
+  }
+
+  navigateOrError(){
+    if(this.signedIn()){
+      this.router.navigate(['/add-rating'], { queryParams: { id: this.id, name: this.title}});
+      console.log("in wrong section");
+    }else{
+      this.toastr.error('Please sign in to add a rating');
+      console.log("should be error message");
+    }
   }
 }

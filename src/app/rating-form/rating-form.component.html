@@ -1,6 +1,6 @@
 <div class="send-rating">
 <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
-    <h1>REVIEW Brooks Dining Hall</h1>
+    <h1>REVIEW {{title}} Dining Hall</h1>
     
     <div *ngFor="let category of categories">
       <label [for]="category">{{ category | titlecase }}</label>
@@ -19,5 +19,6 @@
     </div>
   
     <button type="submit">Submit</button>
+    
   </form>
 </div>
